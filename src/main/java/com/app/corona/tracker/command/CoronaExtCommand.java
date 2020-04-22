@@ -1,20 +1,20 @@
 package com.app.corona.tracker.command;
 
 import com.app.corona.tracker.resposne.CoronaCountryResponse;
-import com.app.corona.tracker.resposne.CoronaResponse;
 import com.app.corona.tracker.resposne.DistrictWiseData;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CoronaExtCommand {
@@ -27,25 +27,23 @@ public class CoronaExtCommand {
     @Autowired
     RestTemplate restTemplate;
 
-    public DistrictWiseData coronaCasesByAllState() throws IOException {
-        DistrictWiseData cResponse = new DistrictWiseData();
+    public List<DistrictWiseData> coronaCasesByAllState() throws IOException {
+        logger.info("Entering CoronaExtCommand :: coronaCasesByAllState() method");
+        List<DistrictWiseData> districtWiseData = new ArrayList<>();
         String Url = env.getProperty("corona.statewise.data");
         if(null != Url) {
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            HttpEntity<DistrictWiseData> entity = new HttpEntity<>(headers);
-            ResponseEntity<DistrictWiseData> response = restTemplate.exchange(Url,
-                    HttpMethod.GET, entity, DistrictWiseData.class);
-            logger.info("Response Corona Data ::" + response.getBody());
-            //ResponseEntity<String> response = restTemplate.getForEntity(Url, Object.class);
-            if(null != response.getBody()) {
-                cResponse = response.getBody();
+            DistrictWiseData[] list = restTemplate.getForObject(Url, DistrictWiseData[].class);
+            logger.info("Response Corona Data ::" + list);
+            if(null != list) {
+                districtWiseData = Arrays.stream(list).collect(Collectors.toList());
             }
         }
-        return cResponse;
+        logger.info("Exiting CoronaExtCommand :: coronaCasesByAllState() method");
+        return districtWiseData;
     }
 
     public CoronaCountryResponse countryWise() throws IOException {
+        logger.info("Entering CoronaExtCommand :: countryWise() method");
         CoronaCountryResponse cResponse = new CoronaCountryResponse();
         String Url = env.getProperty("data.national");
         if(null != Url) {
@@ -55,11 +53,11 @@ public class CoronaExtCommand {
             ResponseEntity<CoronaCountryResponse> response = restTemplate.exchange(Url,
                     HttpMethod.GET, entity, CoronaCountryResponse.class);
             logger.info("Response Corona country Data ::" + response.getBody());
-            //ResponseEntity<String> response = restTemplate.getForEntity(Url, Object.class);
             if(null != response.getBody()) {
                 cResponse = response.getBody();
             }
         }
+        logger.info("Exiting CoronaExtCommand :: countryWise() method");
         return cResponse;
     }
 
