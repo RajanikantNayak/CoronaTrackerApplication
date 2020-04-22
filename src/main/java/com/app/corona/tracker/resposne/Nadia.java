@@ -1,13 +1,16 @@
 package com.app.corona.tracker.resposne;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class Nadia {
- private float active;
- private float confirmed;
- private float deceased;
- private float recovered;
- private Delta DeltaObject;
+ private Integer active;
+ private Integer confirmed;
+ private Integer deceased;
+ private Integer recovered;
+
+ @JsonProperty("delta")
+ Delta delta;
 
 }

@@ -18,89 +18,89 @@ public class DistrictWiseData {
     private ArunachalPradesh arunachalPradeshObject;
 
     @JsonProperty("Assam")
-    private Assam assamObject;
+    private Assam assam;
 
     @JsonProperty("Bihar")
-    private Bihar biharObject;
+    private Bihar bihar;
 
     @JsonProperty("Chandigarh")
-    private Chandigarh chandigarhObject;
+    private Chandigarh chandigarh;
 
     @JsonProperty("Chhattisgarh")
-    private Chhattisgarh chhattisgarhObject;
+    private Chhattisgarh chhattisgarh;
 
     @JsonProperty("Delhi")
-    private Delhi delhiObject;
+    private Delhi delhi;
 
     @JsonProperty("Goa")
-    private Goa goaObject;
+    private Goa goa;
 
     @JsonProperty("Gujarat")
-    private Gujarat gujaratObject;
+    private Gujarat gujarat;
 
     @JsonProperty("Haryana")
-    private Haryana haryanaObject;
+    private Haryana haryana;
 
     @JsonProperty("HimachalPradesh")
-    private HimachalPradesh himachalPradeshObject;
+    private HimachalPradesh himachalPradesh;
 
     @JsonProperty("Jammu and Kashmir")
-    private JammuandKashmir jammuandKashmirObject;
+    private JammuandKashmir jammuandKashmir;
 
     @JsonProperty("Jharkhand")
-    private Jharkhand jharkhandObject;
+    private Jharkhand jharkhand;
 
     @JsonProperty("Karnataka")
-    private Karnataka karnatakaObject;
+    private Karnataka karnataka;
 
     @JsonProperty("Kerala")
-    private Kerala keralaObject;
+    private Kerala kerala;
 
     @JsonProperty("Ladakh")
-    private Ladakh ladakhObject;
+    private Ladakh ladakh;
 
     @JsonProperty("Madhya Pradesh")
-    private MadhyaPradesh madhyaPradeshObject;
+    private MadhyaPradesh madhyaPradesh;
 
     @JsonProperty("Maharashtra")
-    private Maharashtra maharashtraObject;
+    private Maharashtra maharashtra;
 
     @JsonProperty("Manipur")
-    private Manipur manipurObject;
+    private Manipur manipur;
 
     @JsonProperty("Meghalaya")
-    private Meghalaya meghalayaObject;
+    private Meghalaya meghalaya;
 
     @JsonProperty("Mizoram")
-    private Mizoram mizoramObject;
+    private Mizoram mizoram;
 
     @JsonProperty("Odisha")
-    private Odisha odishaObject;
+    private Odisha odisha;
 
     @JsonProperty("Puducherry")
-    private Puducherry puducherryObject;
+    private Puducherry puducherry;
 
     @JsonProperty("Punjab")
-    private Punjab punjabObject;
+    private Punjab punjab;
 
     @JsonProperty("Rajasthan")
-    private Rajasthan rajasthanObject;
+    private Rajasthan rajasthan;
 
     @JsonProperty("Tamil Nadu")
-    private TamilNadu tamilNaduObject;
+    private TamilNadu tamilNadu;
 
     @JsonProperty("Telangana")
     private Telangana telanganaObject;
 
     @JsonProperty("Tripura")
-    private Tripura tripuraObject;
+    private Tripura tripura;
 
     @JsonProperty("Uttar Pradesh")
-    private UttarPradesh uttarPradeshObject;
+    private UttarPradesh uttarPradesh;
 
     @JsonProperty("Uttarakhand")
-    private Uttarakhand uttarakhandObject;
+    private Uttarakhand uttarakhand;
 
     @JsonProperty(" West Bengal")
-    private WestBengal westBengalObject;
+    private WestBengal westBengal;
 }
