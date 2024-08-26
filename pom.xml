@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<swagger.version>2.5.0</swagger.version>
+		<swagger.version>2.10.0</swagger.version>
 		<jacoco.version>0.8.3</jacoco.version>
 	<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 	<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
